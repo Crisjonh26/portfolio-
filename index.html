@@ -1,0 +1,562 @@
+<!doctype html>
+<html>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/49f322cff2.js" crossorigin="anonymous"></script>
+  <head>
+    <style>
+      *{
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "roboto";
+        text-decoration: none;
+      }
+      html{
+        scroll-behavior: smooth;
+      }
+      body{
+        background: #0c1022;
+        font-family: Arial,Sans-Serif;
+      }
+      header{
+        width: 100%;
+        height: 8vh;
+        background: tranparent;
+      }
+      .footer{
+        background: rgba(0,0,0,0.25);
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #000;
+        width: 100%;
+        font-family: Arial black;
+        background-image: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: Moving 80s linear infinite;
+      }
+      .footer p{
+        font-size: .9rem;
+        color: #fff;
+      }
+      @keyframes Moving{
+        to{
+          background-position: 4500vh;
+        }
+      }
+      .container{
+        width: 100%;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+        border-radius: 20px;
+        box-shadow: 1px 2px rgba(0,0,0,0.3);
+      }
+      .nav-bar {
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       list-style: none;
+        position: relative;
+       background-color: transparent;
+       padding: 30px 10px;
+     }
+      .menu {display: flex;}
+      .menu li {padding-left: 30px;}
+      .menu li a {
+       display: inline-block;
+       text-decoration: none;
+       color: #fff;
+       text-align: center;
+       transition: 0.15s ease-in-out;
+       position: relative;
+       text-transform: uppercase;
+}
+      .menu li a::after {
+       content: "";
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       width: 0;
+       height: 1px;
+       background-color: #fff;
+       transition: 0.15s ease-in-out;
+      }
+      .menu li a:hover:after {width: 100%;}
+      .open-menu , .close-menu {
+       position: absolute;
+       color: #fff;
+       cursor: pointer;
+       font-size: 1.9rem;
+       display: none;
+     }
+       .open-menu {
+       top: 50%;
+       right: 20px;
+       transform: translateY(-50%);
+      }
+      .close-menu {
+       top: 20px;
+       right: 20px;
+      }
+      #check {display: none;}
+      @media(max-width: 610px){
+     .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 40vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: #0c1022;
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {margin-top: 20px;}
+    .menu li a {padding: 10px;}
+    .open-menu , .close-menu {display: block;}
+    #check:checked ~ .menu {right: 0;}
+}
+      img{
+        width: 50%;
+        height: 50%;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        margin-top: 60px;
+        text-align: center;
+        margin-left: 25% ;
+        box-shadow: 1px 1px 1px 1px#f06;
+      }
+      h5{
+        text-align: center;
+        font-size: 40px;
+      }
+      .rainbow{
+        font-family: Arial black;
+        background-image: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: move 70s linear infinite;
+      }
+      @keyframes move{
+        to{
+          background-position: 4500vh;
+        }
+      }
+      h6{
+        color: #eee;
+        font-size: 20px;
+        text-align: start;
+        margin-left: 10px;
+      }
+      h2{
+        font-family: "roboto Condesed",Sans-Serif;
+        color: #ff0000;
+        text-align: center;
+        font-size: 30px;
+        letter-spacing: 1px;
+        animation: glitch 0.3s linear infinite;
+        text-shadow: 1px 1px #fff;
+      }
+      h2:before,h2:after{
+        content: none;
+        position: absolute;
+        left: 0;
+        color: #fff;
+      }
+      @keyframes glitch{
+        2%,64%{
+          transform: translate(3px,0) skew(0deg) ;
+        }
+        4%,64%{
+          transform: translate(-2px,0) skew(0deg);
+        }
+        62%{
+          transform: translate(0 0) skew(5deg);
+        }
+      }
+      h1:before{
+        animation: glitchtop 0.6s linear infinite;
+        clip-path: polygon(0 0,100% 0, 100% 35%, 0 40%);
+        webkit-clip-path: polygon(0 0,100% 0, 100% 35%, 0 40%);
+      }
+      @keyframes glitchtop{
+        2%,64%{
+          transform: translate(2px -2px);
+        }
+        4%,60%{
+          transform: translate(-2px 2px);
+        }
+        62%{
+          transform: translate(15px -1px) skew(13deg);
+        }
+      }
+      h1:after{
+        animation: glitchbottom 1.6s linear infinite;
+        clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+      }
+      @keyframes glitchbottom {
+        2%,64%{
+          transform: translate(0, 0);
+        }
+        4%,60%{
+          transform: translate(0, 0);
+        }
+        62%{
+          transform: translate(30px,5px) skew(21deg);
+        }
+      }
+      hr{
+        width: 90%;
+        margin: auto;
+      }
+      h5{
+        color: #0ef;
+        text-shadow: 0 0  1rem #0ef;
+      }
+      h3{
+        font-size: 30px;
+        color: #fff;
+        text-shadow: 1px 1px #FF0000;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        text-align: center;
+      }
+      .wrapper{
+        display: inline-flex;
+        margin-left: 10px;
+      }
+      .wrapper .static-text{
+        font-size: 30px;
+        color: #fff;
+        font-weight: 500;
+        text-align: center;
+      }
+      .wrapper .dynamic-text{
+        margin-left: 10px;
+        line-height: 38px;
+        height: 38px;
+        overflow: hidden;
+      }
+      .dynamic-text li{
+        list-style: none;
+        font-size: 30px;
+        font-weight: 500;
+        position: relative;
+        top: 0;
+        color: #3ABEF9;
+        animation: slide 7s steps(2) infinite;
+      }
+      @keyframes slide{
+        100%{
+          top: -79px;
+        }
+      }
+      .dynamic-text li span{
+        position: relative;
+        margin: 5px 0;
+      }
+      .dynamic-text li span:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background: #0c1022;
+        height: 100%;
+        border-left: 3px solid #37B7C3;
+        animation: typing 3.5s steps(17) infinite;
+      }
+      @keyframes typing{
+        40%,60%{
+          left: calc(100% + 30px);
+        }
+        100%{
+          left: 0;
+        }
+      }
+      .oi{
+        border: 1px solid #ccc;
+        padding: 20px 10px;
+        width: 100%;
+        border-radius: 20px;
+      }
+      .text{
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        margin-top: 3px;
+        text-shadow: 2px 1px #ff0000;
+      }
+      .Contact h2{
+        margin-bottom: 3rem;
+      }
+      .Contact form{
+        max-width: 70rem;
+        margin: 1rem auto;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .Contact form .input-box{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .Contact form .input-box input,
+      .Contact form textarea{
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 10px;
+        border-radius: .8rem;
+        color: #fff;
+        background: #0c1022;
+        margin: .5rem 0;
+        border: 1px solid #ccc;
+      }
+      .Contact form .input-box input{
+        width: 49%;
+      }
+      .Contact form textarea{
+        resize: none;
+      }
+      .po{
+        display: flex;
+       align-items: center;
+       padding: 20px;
+       font-size: 20px;
+       color: #ffffff ;
+       gap: 10px;
+       border: none;
+        border-radius: .8rem;
+      background: linear-gradient(270deg,#ff994f,#fa6d86);
+       cursor: pointer;
+       margin: auto;
+       margin-top: 10px;
+      }
+      button:hover{
+        background: lightblue;
+      }
+      .ji{
+        border: none;
+        padding: 20px 10px;
+        border-radius: 30px;
+      }
+      .skills-area {
+       display: flex;
+       flex-direction: column;
+       padding: 0 20%;
+      }
+      .skill {
+       position: relative;
+       margin-bottom: 40px;
+     }
+     .fa-brands{
+       font-size: 30px;
+     }
+     .fa-css3-alt{
+       color: #264de4;
+     }
+     .fa-html5{
+       color:#e34c26;
+     }
+     .fa-node-js{
+       color: #3c873A;
+     }
+     .skill-title {
+       font-size: 20px;
+       margin-bottom: 10px;
+       color: #fff;
+       margin-top: 8px;
+       margin-left: 7px;
+     }
+     
+      .skill-bar {
+       width: 100%;
+       background: rgba(255, 255, 255, 0.6);
+       height: 20px;
+       z-index: -1;
+       border-radius: 100px;
+       position: absolute;
+     }
+      .skill-fill {
+       background: linear-gradient(135deg,#fb9eef,#f40f0f);
+       height: 20px;
+       border-radius: 100px;
+       display: flex;
+       justify-content: flex-end;
+       align-items: center;
+       padding-right: 30px;
+       overflow: hidden;
+     }
+      .skill-percent {
+       font-size: 20px;
+     }
+
+     .html {
+       animation: html 4s;
+        width: 60%;
+     }
+     .css {
+       animation: css 4s;
+       width: 80%;
+     }
+     .js {
+       animation: js 4s;
+       width: 30%;
+     }
+     @keyframes html {
+        from {
+       width: 0;
+     }
+       to {
+       width: 60%;
+     }
+    }
+      @keyframes css {
+       from {
+       width: 0;
+     }
+       to {
+       width: 80%;
+    }
+   }
+      @keyframes js {
+       from {
+       width: 0;
+    }
+        to {
+        width: 30%;
+   }
+  }
+  .backtotop{
+    border: none;
+  }
+  .backtotop .ojn{
+    padding: .8rem;
+  }
+
+  .backtotop .ojn .material-symbols-outlined{
+    font-size: 2rem;
+    text-align: center;
+    background: #3FA2F6;
+    border: 1px solid #3FA2F6;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: 0 0 1rem #96C9F4;
+  }
+
+  @media (max-width: 490px){
+    body{
+      width:100%;
+      height: 100%;
+    }
+    
+  }
+    </style>
+    <body>
+          <section id="Home">
+      <header>
+    <nav>
+        <ul class='nav-bar'>
+            <input type='checkbox' id='check' />
+            <span class="menu">
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skill">Skills</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+            </span>
+            <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+        </ul>
+    </nav>
+    </header>
+    
+      <div class="container">
+        <img src="https://graph.facebook.com/100024566291791/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662" alt="cris">
+        </div>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <h5>It's Me</h5>
+        <h2 >Cris Jhon Deguiñon</h2>
+        <div class="wrapper">
+          <div class="static-text">I'm A </div>
+          <ul class="dynamic-text">
+            <li><span>FrontendDeveloper</span></li>
+            <li><span>& Web Developer</span></li>
+          </ul>
+        </div>
+     </section>
+      <section id="about">
+        <h3> About </h3>
+        <div class="oi">
+          <p class="text">Im Cris Jhon Deguiñon Frontend Developer .I have self-motivated to thrive challenges and dynamic environments. seeking a competitive position to improve my skills to be contributed on professional organization. Im very passionate to learn new stuff that i have interested to ,that can help me to get more better on it.</p>
+        </div>
+      </section>
+      <br>
+      <section id="skill">
+        <h3>Skills</h3>
+        <div class="ji">
+        <div class="skill">
+                  <i class="fa-brands fa-html5"></i>
+        <div class="skill-title">HTML</div>
+        <div class="skill-bar"></div>
+        <div class="html skill-fill">
+          <span class="skill-percent">60%</span>
+        </div>
+      </div>
+      <div class="skill">
+        <i class="fa-brands fa-css3-alt"></i>
+        <div class="skill-title">CSS</div>
+        <div class="skill-bar"></div>
+        <div class="css skill-fill">
+          <span class="skill-percent">80%</span>
+        </div>
+      </div>
+      <div class="skill">
+        <i class="fa-brands fa-node-js"></i>
+        <div class="skill-title">Node.js</div>
+        <div class="skill-bar"></div>
+        <div class="js skill-fill">
+          <span class="skill-percent">30%</span>
+        </div>
+      </div>
+  </div>
+      </section>
+      <section class="Contact" id="Contact">
+        <h3 class="heading">Contact<span>Me!</span></h3>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          
+          <input type="hidden" name="access_key" value="778050c7-9dfe-43d6-94e1-6db2b8c583b7">
+          
+          <div class="input-box">
+            <input type="text" name="Name" placeholder="Full Name...">
+            <input type="Email" name="Email" placeholder="Email Address...">
+          </div>
+          <div class="input-box">
+            <input type="number" name="Number" placeholder="Mobile Number...">
+            <input type="text" name="Subject" placeholder="Subject">
+          </div>
+          <textarea placeholder="Your Message..."></textarea>
+          <button class="po">Submit</button>
+        </form>
+      </section>
+      <div class="backtotop">
+        <a class="ojn" href="#Home"><span class="material-symbols-outlined">
+arrow_upward
+</span></a>
+      </div>
+    </body>
+    <br>
+    <div class="footer">
+      <p>© 2024 by Cris Jhon Deguiñon|<span>All Right Reserved</span></p>
+    </div>
+  </head>
+</html>
